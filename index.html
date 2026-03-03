@@ -4,509 +4,294 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>AlloPlombier66 - Dépannage Plomberie Urgence 24/7</title>
-<meta name="description" content="Dépannage plomberie urgence 24h/24 7j/7 dans le 66. Fuite d’eau, débouchage, chauffe-eau, WC. Demande par SMS ou appel immédiat." />
 
 <style>
 :root{
-  --rouge:#c8102e;   /* catalan */
-  --jaune:#ffd100;   /* catalan */
-  --bleu:#0b3d91;    /* confiance */
-  --bg:#fff7e6;      /* fond chaud */
+  --rouge:#c8102e;
+  --jaune:#ffd100;
+  --bleu:#0b3d91;
+  --bg:#fff7e6;
   --texte:#121826;
   --muted:#5b6678;
-  --card:#ffffff;
-  --border:#e7e2d6;
-  --shadow: 0 14px 38px rgba(0,0,0,.10);
+  --border:#ece6d8;
 }
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-  font-family: Arial, sans-serif;
   margin:0;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg, rgba(255,209,0,.15), rgba(200,16,46,.06)), var(--bg);
   color:var(--texte);
-  background:
-    linear-gradient(135deg, rgba(255,209,0,.18), rgba(200,16,46,.08)),
-    var(--bg);
-  padding-bottom:92px; /* réserve pour CTA fixe */
+  padding-bottom:100px;
 }
 
-/* Bande catalane */
-.stripes{
-  height:10px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--jaune) 0 22px,
-    var(--rouge) 22px 44px
-  );
+/* MENU HAUT FIXE */
+.navbar{
+  position:sticky;
+  top:0;
+  background:white;
+  border-bottom:1px solid var(--border);
+  z-index:1000;
 }
-
-.wrap{max-width:1040px; margin:0 auto; padding:16px;}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow: var(--shadow);
-  overflow:hidden;
-}
-
-/* HEADER */
-.header{
-  padding:22px 18px 10px;
+.navInner{
+  max-width:1100px;
+  margin:auto;
   display:flex;
-  flex-direction:column;
+  justify-content:space-between;
   align-items:center;
-  text-align:center;
-  gap:10px;
+  padding:14px 20px;
 }
-.brand img{
-  width:min(440px, 92vw);
-  height:auto;
-  display:block;
-  margin:0 auto;
-}
-
-/* HERO */
-.hero{
-  padding:18px 18px 16px;
-  border-top:1px solid var(--border);
-  background:
-    radial-gradient(900px 420px at 15% 0%, rgba(255,209,0,.35), transparent 60%),
-    radial-gradient(900px 420px at 85% 0%, rgba(200,16,46,.18), transparent 60%),
-    #fff;
-}
-.hTitle{
-  margin:0 0 8px;
-  font-size:34px;
-  line-height:1.12;
-  letter-spacing:-.4px;
-}
-.hSub{
-  margin:0 auto 14px;
-  max-width:860px;
-  color:var(--muted);
-  font-size:16px;
-  line-height:1.55;
-}
-
-/* CTA buttons (non-fixed) */
-.topActions{
-  display:flex;
-  gap:12px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-.btn{
-  border:none;
-  border-radius:16px;
-  padding:14px 16px;
-  font-size:16px;
+.navLogo{
   font-weight:900;
-  cursor:pointer;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  min-width:260px;
+  color:var(--rouge);
+  font-size:18px;
 }
-.btnSecondary{
-  background:linear-gradient(90deg, rgba(11,61,145,.10), rgba(11,61,145,.04));
-  border:1px solid rgba(11,61,145,.20);
-  color:var(--bleu);
+.navLinks a{
+  margin-left:20px;
+  text-decoration:none;
+  font-weight:700;
+  color:#333;
+}
+.navLinks a:hover{color:var(--rouge)}
+
+/* CONTAINER */
+.wrap{max-width:1100px;margin:auto;padding:20px}
+.section{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:30px;
+  margin-bottom:20px;
 }
 
-/* 3 icônes centrées en bas 1 ligne */
+/* LOGO */
+.logo{
+  text-align:center;
+  margin-bottom:20px;
+}
+.logo img{
+  width:380px;
+  max-width:95%;
+}
+
+/* TITRES */
+h1{font-size:32px;margin:0 0 10px}
+h2{font-size:22px;margin:0 0 15px}
+p{color:var(--muted);line-height:1.6}
+
+/* 3 ICONES */
 .features{
-  padding:14px 18px 18px;
-  border-top:1px solid var(--border);
   display:flex;
   justify-content:center;
-  gap:10px;
-  flex-wrap:nowrap;
-  background:#fff;
-}
-@media (max-width:700px){
-  .features{flex-wrap:wrap}
+  gap:20px;
+  text-align:center;
 }
 .feature{
-  flex:0 1 300px;
-  max-width:340px;
-  text-align:center;
+  flex:1;
+  padding:20px;
   border:1px solid var(--border);
   border-radius:18px;
-  padding:14px 12px;
-  background: linear-gradient(90deg, rgba(255,209,0,.14), rgba(200,16,46,.06));
+  background:linear-gradient(90deg, rgba(255,209,0,.12), rgba(200,16,46,.05));
 }
-.feature .ico{font-size:22px; margin-bottom:6px}
-.feature .t{font-weight:1000}
-.feature .s{font-size:13px; color:var(--muted); margin-top:6px; line-height:1.35}
-
-/* SECTIONS */
-.section{
-  padding:22px 18px;
-  border-top:1px solid var(--border);
-  background:#fff;
-}
-.sectionTitle{
-  margin:0 0 10px;
-  font-size:20px;
-  letter-spacing:-.2px;
-}
-.sectionDesc{
-  margin:0 0 16px;
-  color:var(--muted);
-  font-size:14px;
-  line-height:1.5;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:14px;
-}
-@media (max-width:920px){ .grid{grid-template-columns:1fr;} }
-
-.panel{
-  border:1px solid var(--border);
-  border-radius:18px;
-  padding:16px;
-  background:#fff;
-}
-.panel h3{
-  margin:0 0 10px;
-  font-size:16px;
-}
-.list{
-  margin:0;
-  padding-left:18px;
-  color:var(--muted);
-  line-height:1.6;
+.feature span{
+  font-size:26px;
+  display:block;
+  margin-bottom:10px;
 }
 
 /* FORM */
-.form label{display:block; font-weight:900; margin:10px 0 6px;}
 input, textarea, select{
   width:100%;
-  padding:12px 12px;
-  border:1px solid #d7dde6;
+  padding:12px;
+  margin:10px 0;
+  border-radius:12px;
+  border:1px solid #ddd;
+  font-size:15px;
+}
+button{
+  width:100%;
+  padding:14px;
+  border:none;
   border-radius:14px;
   font-size:16px;
-  background:#fff;
+  font-weight:900;
+  cursor:pointer;
 }
-textarea{min-height:120px; resize:vertical;}
-.row{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
-@media (max-width:560px){ .row{grid-template-columns:1fr;} }
-
 .btnSms{
-  width:100%;
-  margin-top:8px;
-  background:linear-gradient(90deg, var(--jaune), #ffe77a);
-  color:#222;
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:16px;
-  padding:14px 16px;
-  font-size:17px;
-  font-weight:1000;
-  cursor:pointer;
+  background:linear-gradient(90deg,var(--jaune),#ffe77a);
 }
-.note{
-  margin:12px 0 0;
-  color:var(--muted);
-  font-size:13px;
-  line-height:1.45;
+.btnPartner{
+  background:#f3f4f6;
+  margin-top:15px;
 }
 
-/* FAQ (accordéon natif) */
-.faq details{
-  border:1px solid var(--border);
-  border-radius:16px;
-  padding:12px 14px;
-  background:#fff;
+/* FAQ */
+details{
   margin-bottom:10px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:10px 15px;
 }
-.faq summary{
-  cursor:pointer;
-  font-weight:1000;
-}
-.faq p{margin:10px 0 0; color:var(--muted); line-height:1.5; font-size:14px;}
+summary{font-weight:900;cursor:pointer}
 
 /* FOOTER */
 .footer{
-  padding:16px 18px;
-  border-top:1px solid var(--border);
-  background: linear-gradient(90deg, rgba(255,209,0,.22), rgba(200,16,46,.10));
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  align-items:center;
-  justify-content:space-between;
-}
-.pill{
-  padding:9px 12px;
-  border-radius:999px;
-  background:#fff;
-  border:1px solid rgba(0,0,0,.08);
-  font-weight:900;
-  color:#222;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+  color:#666;
 }
 
-/* CTA FIXE (rouge, élégant, sans numéro visible) */
+/* BOUTON FIXE APPEL */
 .stickyCall{
   position:fixed;
-  left:0; right:0; bottom:0;
-  padding:12px 14px;
-  background:rgba(255,255,255,.92);
-  backdrop-filter: blur(10px);
-  border-top:1px solid rgba(0,0,0,.08);
-  z-index:9999;
-}
-.stickyInner{
-  max-width:1040px;
-  margin:0 auto;
+  bottom:0;
+  left:0;
+  right:0;
+  background:white;
+  border-top:1px solid #ddd;
+  padding:12px;
   display:flex;
   justify-content:center;
+  z-index:2000;
 }
 .callBtn{
-  width:min(640px, 100%);
-  background: linear-gradient(90deg, #b10e28, #ff3b3b);
-  color:#fff;
-  box-shadow: 0 14px 34px rgba(200,16,46,.30);
-  border-radius:18px;
-  padding:14px 18px;
+  background:linear-gradient(90deg,#b10e28,#ff3b3b);
+  color:white;
+  font-weight:900;
   font-size:18px;
-  font-weight:1000;
+  padding:16px 25px;
+  border-radius:18px;
   text-decoration:none;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  letter-spacing:.3px;
+  box-shadow:0 10px 30px rgba(200,16,46,.4);
 }
-.callBtn .dot{
-  width:10px; height:10px;
-  border-radius:999px;
-  background:rgba(255,255,255,.95);
-  box-shadow:0 0 0 6px rgba(255,255,255,.18);
-}
-a{color:inherit}
+.callBtn:hover{opacity:.95}
 </style>
 </head>
 
 <body>
-<div class="stripes"></div>
 
-<div class="wrap">
-  <div class="card">
-
-    <!-- LOGO GRAND + CENTRÉ -->
-    <div class="header">
-      <div class="brand">
-        <img src="alloplombier66.png" alt="AlloPlombier66">
-      </div>
+<!-- MENU -->
+<div class="navbar">
+  <div class="navInner">
+    <div class="navLogo">AlloPlombier66</div>
+    <div class="navLinks">
+      <a href="#services">Services</a>
+      <a href="#demande">Demande</a>
+      <a href="#faq">FAQ</a>
+      <a href="#partenaire">Partenaire</a>
     </div>
-
-    <!-- HERO -->
-    <div class="hero">
-      <h1 class="hTitle">Dépannage plomberie d’urgence dans le 66</h1>
-      <p class="hSub">
-        Une prise en charge rapide, une intervention propre et des informations claires.
-        Fuite d’eau, débouchage, WC, chauffe-eau… Nous intervenons sur Perpignan et tout le département 66.
-      </p>
-
-      <div class="topActions">
-        <a class="btn btnSecondary" href="#demande">📩 Envoyer une demande</a>
-        <a class="btn btnSecondary" href="https://www.habitech-services.fr" target="_blank" rel="noopener">
-          🔗 En savoir plus – Notre partenaire
-        </a>
-      </div>
-    </div>
-
-    <!-- 3 ICÔNES -->
-    <div class="features">
-      <div class="feature">
-        <div class="ico">⏱️</div>
-        <div class="t">Intervention rapide</div>
-        <div class="s">Organisation optimisée pour les urgences et dépannages.</div>
-      </div>
-      <div class="feature">
-        <div class="ico">🕘</div>
-        <div class="t">24H/7J</div>
-        <div class="s">Disponibilité élargie selon les besoins et la zone.</div>
-      </div>
-      <div class="feature">
-        <div class="ico">📍</div>
-        <div class="t">Couverture 66</div>
-        <div class="s">Perpignan, littoral, arrière-pays : intervention sur demande.</div>
-      </div>
-    </div>
-
-    <!-- FORMULAIRE -->
-    <div class="section" id="demande">
-      <h2 class="sectionTitle">Envoyer une demande</h2>
-      <p class="sectionDesc">
-        Remplissez le formulaire : votre application SMS s’ouvre avec un message prêt à envoyer.
-      </p>
-
-      <div class="panel">
-        <form id="smsForm" class="form">
-          <div class="row">
-            <div>
-              <label for="nom">Nom / Prénom</label>
-              <input id="nom" type="text" name="nom" placeholder="Nom / Prénom" required>
-            </div>
-            <div>
-              <label for="tel">Téléphone</label>
-              <input id="tel" type="tel" name="tel" placeholder="Votre téléphone" required>
-            </div>
-          </div>
-
-          <label for="ville">Ville</label>
-          <input id="ville" type="text" name="ville" placeholder="Ville" required>
-
-          <label for="urgence">Type de problème</label>
-          <select id="urgence" name="urgence" required>
-            <option value="">Choisir…</option>
-            <option>Fuite d'eau</option>
-            <option>Canalisation bouchée</option>
-            <option>WC bouché</option>
-            <option>Chauffe-eau</option>
-            <option>Autre</option>
-          </select>
-
-          <label for="message">Détails</label>
-          <textarea id="message" name="message" placeholder="Décrivez le problème (urgence, accès, étage, etc.)"></textarea>
-
-          <button class="btnSms" type="submit">📩 ENVOYER VOTRE DEMANDE</button>
-
-          <p class="note">
-            Astuce : en cas de fuite importante, coupez l’arrivée d’eau générale et placez un récipient. Puis appelez.
-          </p>
-        </form>
-      </div>
-    </div>
-
-    <!-- NOS SERVICES -->
-    <div class="section" id="services">
-      <h2 class="sectionTitle">Nos services</h2>
-      <p class="sectionDesc">Une gamme complète pour l’urgence et l’entretien, avec une intervention structurée.</p>
-
-      <div class="grid">
-        <div class="panel">
-          <h3>🔧 Dépannage & réparation</h3>
-          <ul class="list">
-            <li>Fuite d’eau (robinets, siphons, WC, évacuations)</li>
-            <li>Remplacement mécanisme WC / flotteur / robinetterie</li>
-            <li>Petites réparations et remise en service</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h3>🚿 Débouchage</h3>
-          <ul class="list">
-            <li>Évier, douche, lavabo, WC</li>
-            <li>Canalisations lentes / obstructions</li>
-            <li>Conseils prévention (graisses, lingettes, calcaire)</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h3>🔥 Chauffe-eau</h3>
-          <ul class="list">
-            <li>Dépannage (pannes courantes)</li>
-            <li>Diagnostic de sécurité (groupe, pression, fuite)</li>
-            <li>Conseils d’entretien</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <h3>🏠 Habitat & conformité</h3>
-          <ul class="list">
-            <li>Petits travaux plomberie</li>
-            <li>Optimisation / remplacement éléments usés</li>
-            <li>Intervention propre et respect du logement</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <!-- FAQ -->
-    <div class="section" id="faq">
-      <h2 class="sectionTitle">FAQ</h2>
-      <p class="sectionDesc">Réponses rapides aux questions fréquentes.</p>
-
-      <div class="faq">
-        <details>
-          <summary>Intervenez-vous vraiment en urgence ?</summary>
-          <p>Oui, selon la situation et votre zone, nous priorisons les urgences (fuite importante, WC inutilisable, etc.). Appelez pour une prise en charge immédiate.</p>
-        </details>
-
-        <details>
-          <summary>Quels renseignements donner pour accélérer l’intervention ?</summary>
-          <p>Ville, type de problème, niveau d’urgence, accès (étage, parking), et si possible une courte description : “fuite sous évier”, “WC bouché”, etc.</p>
-        </details>
-
-        <details>
-          <summary>Dois-je couper l’eau ?</summary>
-          <p>En cas de fuite, oui : coupez l’arrivée d’eau générale si la fuite est importante. Ensuite appelez. Pour un simple goutte-à-goutte, ce n’est pas toujours nécessaire.</p>
-        </details>
-
-        <details>
-          <summary>Vous couvrez quelles villes ?</summary>
-          <p>Perpignan et tout le 66 selon disponibilité. Si vous êtes hors zone, appelez : on vous répond immédiatement.</p>
-        </details>
-      </div>
-    </div>
-
-    <!-- PARTENAIRE -->
-    <div class="section" id="partenaire">
-      <h2 class="sectionTitle">Notre partenaire</h2>
-      <p class="sectionDesc">
-        Pour en savoir plus sur notre partenaire et ses services, consultez leur site.
-      </p>
-      <a class="btn btnSecondary" href="https://www.habitech-services.fr" target="_blank" rel="noopener">
-        🔗 En savoir plus – Habitech Services
-      </a>
-    </div>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <div class="pill">🕘 Disponibilité : 24H/7J</div>
-      <div class="pill">📍 Zone : Pyrénées-Orientales (66)</div>
-      <div class="pill">📩 Demande SMS : formulaire</div>
-    </div>
-
   </div>
 </div>
 
-<!-- CTA FIXE (sans numéro visible) -->
-<div class="stickyCall" aria-label="Appeler maintenant">
-  <div class="stickyInner">
-    <a class="callBtn" href="tel:+33756833656">
-      <span class="dot" aria-hidden="true"></span>
-      APPELER MAINTENANT
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="section">
+    <div class="logo">
+      <img src="alloplombier66.png" alt="AlloPlombier66">
+    </div>
+    <h1>Dépannage plomberie d’urgence dans le 66</h1>
+    <p>
+      Intervention rapide sur Perpignan et les Pyrénées-Orientales.
+      Fuite d’eau, WC bouché, canalisation, chauffe-eau.
+    </p>
+  </div>
+
+  <!-- 3 ICÔNES -->
+  <div class="section">
+    <div class="features">
+      <div class="feature">
+        <span>⏱️</span>
+        <strong>Intervention rapide</strong>
+        <p>Organisation optimisée pour les urgences.</p>
+      </div>
+      <div class="feature">
+        <span>🕘</span>
+        <strong>Disponible 24/7</strong>
+        <p>Urgences selon disponibilité.</p>
+      </div>
+      <div class="feature">
+        <span>📍</span>
+        <strong>Zone 66</strong>
+        <p>Perpignan et alentours.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <div class="section" id="services">
+    <h2>Nos Services</h2>
+    <p>Fuite, débouchage, chauffe-eau, robinetterie, réparations diverses.</p>
+  </div>
+
+  <!-- FORMULAIRE -->
+  <div class="section" id="demande">
+    <h2>Envoyer votre demande</h2>
+    <form id="smsForm">
+      <input type="text" name="nom" placeholder="Nom / Prénom" required>
+      <input type="tel" name="tel" placeholder="Téléphone" required>
+      <input type="text" name="ville" placeholder="Ville" required>
+      <select name="urgence" required>
+        <option value="">Type de problème</option>
+        <option>Fuite</option>
+        <option>Canalisation bouchée</option>
+        <option>WC</option>
+        <option>Chauffe-eau</option>
+      </select>
+      <textarea name="message" placeholder="Décrivez le problème"></textarea>
+      <button type="submit" class="btnSms">ENVOYER VOTRE DEMANDE</button>
+    </form>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section" id="faq">
+    <h2>FAQ</h2>
+    <details>
+      <summary>Intervention en urgence ?</summary>
+      <p>Oui selon la situation et votre zone.</p>
+    </details>
+    <details>
+      <summary>Faut-il couper l’eau ?</summary>
+      <p>En cas de fuite importante oui.</p>
+    </details>
+  </div>
+
+  <!-- PARTENAIRE -->
+  <div class="section" id="partenaire">
+    <h2>Notre partenaire</h2>
+    <a href="https://www.habitech-services.fr" target="_blank">
+      <button class="btnPartner">EN SAVOIR PLUS</button>
     </a>
   </div>
+
+  <div class="footer">
+    © 2026 AlloPlombier66 - Tous droits réservés
+  </div>
+
+</div>
+
+<!-- BOUTON FIXE -->
+<div class="stickyCall">
+  <a class="callBtn" href="tel:+33756833656">
+    📞 APPELER MAINTENANT - 07 56 83 36 56
+  </a>
 </div>
 
 <script>
-const PHONE = "0756833656";
-
-function buildMessage(d){
-  return encodeURIComponent(
-    "Demande dépannage plomberie (AlloPlombier66)\n" +
-    "Nom: " + d.nom + "\n" +
-    "Tel client: " + d.tel + "\n" +
-    "Ville: " + d.ville + "\n" +
-    "Problème: " + d.urgence + "\n" +
-    "Détails: " + (d.message || "")
-  );
-}
-
-document.getElementById("smsForm").addEventListener("submit", function(e){
+const PHONE="0756833656";
+document.getElementById("smsForm").addEventListener("submit",function(e){
   e.preventDefault();
-  const data = Object.fromEntries(new FormData(this));
-  window.location.href = "sms:" + PHONE + "?&body=" + buildMessage(data);
+  const d=Object.fromEntries(new FormData(this));
+  const msg=encodeURIComponent(
+    "Demande dépannage plomberie\nNom:"+d.nom+
+    "\nTel:"+d.tel+
+    "\nVille:"+d.ville+
+    "\nProblème:"+d.urgence+
+    "\nDétails:"+d.message
+  );
+  window.location.href="sms:"+PHONE+"?&body="+msg;
 });
 </script>
 
