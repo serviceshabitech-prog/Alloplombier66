@@ -1,65 +1,38 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <!--
-    ============================================================
-    AlloPlombier66 - Site vitrine (GitHub Pages / OVH)
-    Version “multinationale” (menu sticky, sections, CTA fixe,
-    badge, services, FAQ, avis, partenaire, SEO, animations légères)
-    ============================================================
-
-    IMPORTANT
-    - Mettre alloplombier66.png à la racine (même dossier que ce fichier)
-    - Le bouton “Appeler maintenant” utilise : tel:+33756833656
-    - Le formulaire prépare un SMS via : sms:0756833656
-  -->
-
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>AlloPlombier66 - Dépannage Plomberie Urgence 24/7 (66)</title>
 
-  <!-- SEO -->
   <meta name="description" content="Dépannage plomberie urgence 24/7 dans le 66 : fuite d’eau, débouchage, WC, chauffe-eau. Demande par SMS ou appel immédiat. Intervention sur Perpignan et Pyrénées-Orientales." />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#c8102e" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="AlloPlombier66 - Dépannage Plomberie Urgence 24/7" />
   <meta property="og:description" content="Fuite d’eau, débouchage, WC, chauffe-eau. Intervention rapide dans le 66. Appelez ou envoyez une demande par SMS." />
   <meta property="og:type" content="website" />
 
-  <!--
-    ============================================================
-    STYLE
-    ============================================================
-  -->
   <style>
-    /* ------------------------------------------------------------
-       Variables (couleurs catalanes + style corporate)
-       ------------------------------------------------------------ */
     :root{
-      --rouge:#c8102e;          /* catalan */
-      --jaune:#ffd100;          /* catalan */
-      --bleu:#0b3d91;           /* confiance */
-      --bg:#fff7e6;             /* fond chaud */
-      --texte:#0f172a;          /* slate-900 */
-      --muted:#5b6678;          /* texte secondaire */
-      --card:#ffffff;           /* blanc */
-      --border:#e9e2d4;         /* bordures */
+      --rouge:#c8102e;
+      --jaune:#ffd100;
+      --bleu:#0b3d91;
+      --bg:#fff7e6;
+      --texte:#0f172a;
+      --muted:#5b6678;
+      --card:#ffffff;
+      --border:#e9e2d4;
       --shadow: 0 18px 50px rgba(0,0,0,.10);
       --shadowSoft: 0 10px 24px rgba(0,0,0,.08);
       --radius:22px;
-      --radiusSm:16px;
       --max:1120px;
-      --ctaHeight:92px;         /* hauteur CTA sticky */
-      --navHeight:72px;         /* hauteur nav approx */
+      --ctaHeight:92px;
+      --navHeight:72px;
       --focus: 0 0 0 4px rgba(11,61,145,.20);
     }
 
-    /* ------------------------------------------------------------
-       Reset / base
-       ------------------------------------------------------------ */
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -78,16 +51,12 @@
     img{max-width:100%; display:block}
     button{font-family:inherit}
 
-    /* Accessibilité focus */
     a:focus, button:focus, input:focus, textarea:focus, select:focus, summary:focus{
       outline:none;
       box-shadow: var(--focus);
       border-radius: 12px;
     }
 
-    /* ------------------------------------------------------------
-       Bande catalane
-       ------------------------------------------------------------ */
     .stripes{
       height:10px;
       background: repeating-linear-gradient(
@@ -97,9 +66,6 @@
       );
     }
 
-    /* ------------------------------------------------------------
-       Layout container
-       ------------------------------------------------------------ */
     .wrap{
       max-width:var(--max);
       margin:0 auto;
@@ -114,9 +80,6 @@
       overflow:hidden;
     }
 
-    /* ------------------------------------------------------------
-       NAVBAR sticky (haut)
-       ------------------------------------------------------------ */
     .navbar{
       position:sticky;
       top:0;
@@ -203,7 +166,6 @@
       color:#111;
     }
 
-    /* bouton nav call (pas le sticky bas, juste en haut pour desktop) */
     .navCall{
       text-decoration:none;
       font-weight:1000;
@@ -220,7 +182,6 @@
       box-shadow: var(--shadowSoft);
     }
 
-    /* Menu mobile simple */
     .navToggle{
       display:none;
       border:1px solid rgba(0,0,0,.10);
@@ -254,9 +215,6 @@
       background: linear-gradient(90deg, rgba(255,209,0,.18), rgba(200,16,46,.10));
     }
 
-    /* ------------------------------------------------------------
-       HEADER / HERO
-       ------------------------------------------------------------ */
     .hero{
       padding:26px 18px 16px;
       background:
@@ -287,7 +245,6 @@
       margin: 10px 0 18px;
     }
 
-    /* Badge “entreprise locale” (sans prétendre à une certification officielle) */
     .badge{
       display:inline-flex;
       align-items:center;
@@ -351,12 +308,6 @@
       box-shadow: var(--shadowSoft);
     }
 
-    .btnPrimary{
-      background: linear-gradient(90deg, #b10e28, #ff3b3b);
-      color:#fff;
-      box-shadow: 0 14px 34px rgba(200,16,46,.25);
-    }
-
     .btnSecondary{
       background: linear-gradient(90deg, rgba(11,61,145,.12), rgba(11,61,145,.05));
       border:1px solid rgba(11,61,145,.20);
@@ -375,31 +326,6 @@
       color:var(--muted);
     }
 
-    /* ------------------------------------------------------------
-       Sections
-       ------------------------------------------------------------ */
-    .section{
-      padding:22px 18px;
-      border-bottom:1px solid var(--border);
-      background:#fff;
-    }
-
-    .sectionTitle{
-      margin:0 0 10px;
-      font-size:20px;
-      letter-spacing:-.2px;
-    }
-
-    .sectionDesc{
-      margin:0 0 16px;
-      color:var(--muted);
-      font-size:14px;
-      line-height:1.55;
-    }
-
-    /* ------------------------------------------------------------
-       Features row (3 icônes) - en bas et centrées sur une ligne
-       ------------------------------------------------------------ */
     .features{
       display:flex;
       justify-content:center;
@@ -438,9 +364,25 @@
       .feature{flex:1 1 260px}
     }
 
-    /* ------------------------------------------------------------
-       Grids
-       ------------------------------------------------------------ */
+    .section{
+      padding:22px 18px;
+      border-bottom:1px solid var(--border);
+      background:#fff;
+    }
+
+    .sectionTitle{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-.2px;
+    }
+
+    .sectionDesc{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+    }
+
     .grid2{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -469,9 +411,6 @@
       line-height:1.6;
     }
 
-    /* ------------------------------------------------------------
-       Formulaire
-       ------------------------------------------------------------ */
     .form label{
       display:block;
       font-weight:1000;
@@ -527,9 +466,18 @@
       line-height:1.55;
     }
 
-    /* ------------------------------------------------------------
-       FAQ accordéon
-       ------------------------------------------------------------ */
+    .divider{
+      height:1px;
+      background:var(--border);
+      margin:14px 0;
+    }
+
+    .micro{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.5;
+    }
+
     .faq details{
       border:1px solid var(--border);
       border-radius:18px;
@@ -570,59 +518,9 @@
       font-size:14px;
     }
 
-    /* ------------------------------------------------------------
-       Avis clients (cards)
-       ------------------------------------------------------------ */
-    .reviews{
-      display:grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap:12px;
-    }
-    @media (max-width: 980px){
-      .reviews{grid-template-columns:1fr}
-    }
-
-    .reviewCard{
-      border:1px solid var(--border);
-      border-radius:18px;
-      padding:16px;
-      background:#fff;
-    }
-
-    .reviewTop{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      margin-bottom:10px;
-    }
-
-    .reviewName{
-      font-weight:1000;
-    }
-
-    .stars{
-      color:#c8102e;
-      font-weight:1000;
-      letter-spacing:1px;
-      font-size:12px;
-      white-space:nowrap;
-    }
-
-    .reviewText{
-      margin:0;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:14px;
-    }
-
-    /* ------------------------------------------------------------
-       Footer
-       ------------------------------------------------------------ */
     .footer{
       padding:16px 18px;
-      background:
-        linear-gradient(90deg, rgba(255,209,0,.22), rgba(200,16,46,.10));
+      background: linear-gradient(90deg, rgba(255,209,0,.22), rgba(200,16,46,.10));
       display:flex;
       flex-wrap:wrap;
       gap:10px;
@@ -640,9 +538,6 @@
       font-size:13px;
     }
 
-    /* ------------------------------------------------------------
-       CTA sticky bas (Appeler maintenant + numéro)
-       ------------------------------------------------------------ */
     .stickyCall{
       position:fixed;
       left:0;
@@ -702,28 +597,10 @@
       white-space:nowrap;
     }
 
-    /* ------------------------------------------------------------
-       Small helpers
-       ------------------------------------------------------------ */
     .anchorOffset{
       scroll-margin-top: calc(var(--navHeight) + 18px);
     }
 
-    .divider{
-      height:1px;
-      background:var(--border);
-      margin:14px 0;
-    }
-
-    .micro{
-      font-size:12px;
-      color:var(--muted);
-      line-height:1.5;
-    }
-
-    /* ------------------------------------------------------------
-       Animations légères (réduction si user préfère)
-       ------------------------------------------------------------ */
     @media (prefers-reduced-motion: reduce){
       *{scroll-behavior:auto}
       .btn, .btnSms, .callBtn, .navCall{transition:none}
@@ -732,15 +609,8 @@
 </head>
 
 <body>
-
-  <!-- Bande catalane -->
   <div class="stripes"></div>
 
-  <!--
-    ============================================================
-    NAVBAR
-    ============================================================
-  -->
   <div class="navbar" role="navigation" aria-label="Menu principal">
     <div class="navInner">
       <div class="navBrand">
@@ -759,34 +629,25 @@
         <a href="#services" class="anchorOffset">Services</a>
         <a href="#demande" class="anchorOffset">Demande</a>
         <a href="#process" class="anchorOffset">Process</a>
-        <a href="#avis" class="anchorOffset">Avis</a>
         <a href="#faq" class="anchorOffset">FAQ</a>
         <a href="#partenaire" class="anchorOffset">Partenaire</a>
         <a class="navCall" href="tel:+33756833656">📞 Appeler</a>
       </div>
     </div>
 
-    <!-- Menu mobile -->
     <div class="navMobile" id="navMobile">
       <a href="#services" class="anchorOffset">Services</a>
       <a href="#demande" class="anchorOffset">Demande</a>
       <a href="#process" class="anchorOffset">Process</a>
-      <a href="#avis" class="anchorOffset">Avis</a>
       <a href="#faq" class="anchorOffset">FAQ</a>
       <a href="#partenaire" class="anchorOffset">Partenaire</a>
       <a href="tel:+33756833656">📞 Appeler</a>
     </div>
   </div>
 
-  <!--
-    ============================================================
-    CONTENU
-    ============================================================
-  -->
   <div class="wrap">
     <div class="card">
 
-      <!-- HERO -->
       <header class="hero">
         <div class="logo">
           <img src="alloplombier66.png" alt="AlloPlombier66">
@@ -826,7 +687,6 @@
         </div>
       </header>
 
-      <!-- 3 ICONES (centrées, même ligne) -->
       <div class="features">
         <div class="feature">
           <div class="ico">⏱️</div>
@@ -847,7 +707,6 @@
         </div>
       </div>
 
-      <!-- SECTION: SERVICES -->
       <section class="section anchorOffset" id="services">
         <h2 class="sectionTitle">Nos services</h2>
         <p class="sectionDesc">
@@ -897,11 +756,10 @@
         </div>
       </section>
 
-      <!-- SECTION: DEMANDE (FORMULAIRE) -->
       <section class="section anchorOffset" id="demande">
         <h2 class="sectionTitle">Envoyer votre demande</h2>
         <p class="sectionDesc">
-          Remplissez le formulaire :
+          Remplissez le formulaire : votre application SMS s’ouvre avec un message prêt à envoyer.
         </p>
 
         <div class="panel">
@@ -939,7 +797,7 @@
 
             <p class="note">
               Astuce : en cas de fuite importante, coupez l’arrivée d’eau générale, protégez la zone (seau/serpillière),
-              puis appelez. Nous vous guidons immédiatement.
+              puis appelez.
             </p>
           </form>
         </div>
@@ -947,11 +805,10 @@
         <div class="divider"></div>
 
         <p class="micro">
-          Vous préférez appeler directement ? Utilisez le bouton rouge “Appeler maintenant” en bas de l’écran.
+          Pour une urgence immédiate, utilisez le bouton “Appeler maintenant” en bas de l’écran.
         </p>
       </section>
 
-      <!-- SECTION: PROCESS (multinationale style) -->
       <section class="section anchorOffset" id="process">
         <h2 class="sectionTitle">Notre méthode d’intervention</h2>
         <p class="sectionDesc">
@@ -972,7 +829,7 @@
             <h3>2) Priorisation & créneau</h3>
             <ul class="list">
               <li>Urgences traitées en priorité</li>
-              <li>Proposition de créneau selon disponibilité et zone</li>
+              <li>Créneau selon disponibilité et zone</li>
               <li>Informations claires avant intervention</li>
             </ul>
           </div>
@@ -997,77 +854,35 @@
         </div>
       </section>
 
-      <!-- SECTION: AVIS -->
-      <section class="section anchorOffset" id="avis">
-        <h2 class="sectionTitle">Avis & retours</h2>
-        <p class="sectionDesc">
-          Exemples de retours clients (texte d’exemple — vous pouvez remplacer par vos vrais avis).
-        </p>
-
-        <div class="reviews">
-          <div class="reviewCard">
-            <div class="reviewTop">
-              <div class="reviewName">Client • Perpignan</div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <p class="reviewText">
-              “Réponse rapide, fuite sous évier réglée proprement. Explications claires et travail soigné.”
-            </p>
-          </div>
-
-          <div class="reviewCard">
-            <div class="reviewTop">
-              <div class="reviewName">Client • Canet</div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <p class="reviewText">
-              “WC bouché un dimanche, intervention efficace. Très pro et ponctuel.”
-            </p>
-          </div>
-
-          <div class="reviewCard">
-            <div class="reviewTop">
-              <div class="reviewName">Client • Saint-Estève</div>
-              <div class="stars">★★★★★</div>
-            </div>
-            <p class="reviewText">
-              “Bonne communication, conseils utiles pour éviter que ça recommence. Merci.”
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION: FAQ -->
       <section class="section anchorOffset" id="faq">
         <h2 class="sectionTitle">FAQ</h2>
         <p class="sectionDesc">
-          Questions fréquentes. (Vous pouvez modifier/ajouter facilement.)
+          Questions fréquentes.
         </p>
 
         <div class="faq">
           <details>
             <summary>
               <div class="q">
-                <span>Intervenez-vous vraiment en urgence ?</span>
+                <span>Intervenez-vous en urgence ?</span>
                 <span class="chev" aria-hidden="true">⌄</span>
               </div>
             </summary>
             <p>
-              Oui, selon la situation et votre zone, les urgences sont priorisées (fuite importante, WC inutilisable, etc.).
-              Appelez pour une prise en charge immédiate.
+              Selon la situation et votre zone, les urgences sont priorisées (fuite importante, WC inutilisable, etc.).
+              Appelez pour une prise en charge rapide.
             </p>
           </details>
 
           <details>
             <summary>
               <div class="q">
-                <span>Que dois-je faire en cas de grosse fuite ?</span>
+                <span>Que faire en cas de grosse fuite ?</span>
                 <span class="chev" aria-hidden="true">⌄</span>
               </div>
             </summary>
             <p>
-              Coupez l’arrivée d’eau générale si nécessaire, protégez la zone (seau/serpillière), puis appelez.
-              Nous vous guidons immédiatement.
+              Coupez l’arrivée d’eau générale si nécessaire, protégez la zone, puis appelez.
             </p>
           </details>
 
@@ -1092,179 +907,28 @@
               </div>
             </summary>
             <p>
-              Nous intervenons sur Perpignan et le département 66 selon disponibilité. Appelez : on vous confirme immédiatement.
-            </p>
-          </details>
-
-          <!-- Pour dépasser largement 500 lignes, on ajoute une FAQ étendue (modifiable) -->
-          <details>
-            <summary>
-              <div class="q">
-                <span>Le SMS “envoyer votre demande” ne s’ouvre pas, que faire ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Certains téléphones gèrent différemment le lien SMS. Dans ce cas, utilisez le bouton “Appeler maintenant”
-              ou envoyez un SMS manuel au 07 56 83 36 56 avec : nom + ville + problème.
+              Intervention sur Perpignan et le département 66 selon disponibilité. Appelez pour confirmation immédiate.
             </p>
           </details>
 
           <details>
             <summary>
               <div class="q">
-                <span>Est-ce que vous faites aussi l’entretien ?</span>
+                <span>Le SMS ne s’ouvre pas, que faire ?</span>
                 <span class="chev" aria-hidden="true">⌄</span>
               </div>
             </summary>
             <p>
-              Oui, selon le besoin. Le plus simple : appelez ou envoyez une demande via le formulaire.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Vous intervenez en appartement et maison ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui. Indiquez si possible l’étage, l’accès et s’il y a un stationnement à proximité.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Comment éviter les bouchons ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Évitez les graisses dans l’évier, les lingettes dans les WC, et faites un entretien régulier.
-              Nous pouvons vous conseiller selon votre installation.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Que faire si l’eau ne s’évacue plus du tout ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Évitez d’insister avec trop d’eau (risque de débordement). Appelez : on vous guide et on planifie le dépannage.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Intervenez-vous pour chauffe-eau qui ne chauffe plus ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui, indiquez le symptôme (plus d’eau chaude, fuite, disjonction). On vous oriente immédiatement.
-            </p>
-          </details>
-
-          <!-- On continue à “gonfler” proprement (toujours cohérent) -->
-          <details>
-            <summary>
-              <div class="q">
-                <span>Peut-on envoyer des photos ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui, après premier contact, on peut vous indiquer le meilleur moyen. L’objectif : gagner du temps au diagnostic.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Quel est le délai moyen d’intervention ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Cela dépend de l’urgence et de la zone. Pour une urgence, appelez : on vous donne une estimation immédiate.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Est-ce que vous intervenez le week-end ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui selon disponibilité et urgence. Le plus rapide : appeler.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Acceptez-vous les demandes non urgentes ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui, vous pouvez envoyer une demande et proposer une disponibilité. Nous vous recontactons.
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Faites-vous les installations complètes ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Selon le projet. Envoyez une demande avec quelques détails (ville, type de travaux) et on vous répond.
-            </p>
-          </details>
-
-          <!-- Quelques blocs supplémentaires pour dépasser 500 lignes (toujours propres) -->
-          <details>
-            <summary>
-              <div class="q">
-                <span>Que dois-je écrire dans le SMS pour être rappelé vite ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Indiquez : Nom + Ville + Problème + Urgence + Disponibilité. Exemple : “Marc, Perpignan, fuite sous évier,
-              urgent, dispo maintenant.”
-            </p>
-          </details>
-
-          <details>
-            <summary>
-              <div class="q">
-                <span>Vous intervenez dans les locaux pro ?</span>
-                <span class="chev" aria-hidden="true">⌄</span>
-              </div>
-            </summary>
-            <p>
-              Oui selon le besoin. Précisez l’adresse et la nature du problème.
+              Utilisez le bouton “Appeler maintenant” ou envoyez un SMS manuel au 07 56 83 36 56 avec : nom + ville + problème.
             </p>
           </details>
         </div>
       </section>
 
-      <!-- SECTION: PARTENAIRE -->
       <section class="section anchorOffset" id="partenaire">
         <h2 class="sectionTitle">Notre partenaire</h2>
         <p class="sectionDesc">
-          Pour en savoir plus sur notre partenaire et ses services, consultez leur site officiel.
+          Pour en savoir plus sur notre partenaire, consultez leur site.
         </p>
 
         <a class="btn btnSecondary" href="https://www.habitech-services.fr" target="_blank" rel="noopener">
@@ -1274,11 +938,10 @@
         <div class="divider"></div>
 
         <p class="micro">
-          Partenariat : nous vous orientons vers le bon interlocuteur selon votre besoin.
+          Partenariat : orientation vers le bon interlocuteur selon votre besoin.
         </p>
       </section>
 
-      <!-- FOOTER -->
       <footer class="footer">
         <div class="pill">🕘 Disponibilité : 24H/7J (selon urgence)</div>
         <div class="pill">📍 Zone : Pyrénées-Orientales (66)</div>
@@ -1288,11 +951,6 @@
     </div>
   </div>
 
-  <!--
-    ============================================================
-    CTA STICKY BAS
-    ============================================================
-  -->
   <div class="stickyCall" aria-label="Appel direct">
     <div class="stickyInner">
       <a class="callBtn" href="tel:+33756833656">
@@ -1303,15 +961,7 @@
     </div>
   </div>
 
-  <!--
-    ============================================================
-    SCRIPTS
-    ============================================================
-  -->
   <script>
-    // ------------------------------------------------------------
-    // Menu mobile (toggle)
-    // ------------------------------------------------------------
     (function(){
       const btn = document.getElementById("navToggle");
       const panel = document.getElementById("navMobile");
@@ -1323,7 +973,6 @@
         btn.setAttribute("aria-expanded", String(!isOpen));
       });
 
-      // Fermer le menu mobile au clic sur un lien
       panel.querySelectorAll("a").forEach(a => {
         a.addEventListener("click", () => {
           panel.style.display = "none";
@@ -1332,9 +981,6 @@
       });
     })();
 
-    // ------------------------------------------------------------
-    // Formulaire -> SMS pré-rempli
-    // ------------------------------------------------------------
     (function(){
       const PHONE = "0756833656";
       const form = document.getElementById("smsForm");
@@ -1359,13 +1005,6 @@
       });
     })();
   </script>
-
-  <!--
-    ============================================================
-    FIN DU FICHIER
-    (Oui, il dépasse largement 500 lignes comme demandé.)
-    ============================================================
-  -->
 
 </body>
 </html>
